@@ -1,0 +1,219 @@
+app:
+  host: "0.0.0.0"
+  port: 5636
+  debug: true
+  secret_key: "dev-only-change-me"
+# -------------------------
+# AUTH / OTP (UI + Policy)
+# -------------------------
+auth:
+  # Prefer restricting access to academic emails.
+  # Enforcement is implemented in routes_auth.py via app.config["AUTH_CFG"] and env vars.
+  # This config block is informational unless you wire it into load_settings().
+  allow_edu_only: true
+
+  # Optional allowlist (leave empty to allow any .edu)
+  allowed_domains: []
+
+  # Support contact shown in UI.
+  support_email: "uta.acl2@gmail.com"
+
+  # Branding (used by templates; keep in sync with footer)
+  lab_name: "Arlington Computational Linguistics Lab (ACL2)"
+  lab_website: "https://redgiant.uta.edu/index.html"
+
+# -------------------------
+# SMTP (OTP email delivery)
+# -------------------------
+# Secrets should live in .env, not committed YAML. We keep placeholders here for clarity.
+smtp:
+  host: "${ASA_SMTP_HOST}"
+  port: "${ASA_SMTP_PORT}"
+  username: "${ASA_SMTP_USERNAME}"
+  password: "${ASA_SMTP_PASSWORD}"
+  from_email: "${ASA_SMTP_FROM}"
+  use_tls: "${ASA_SMTP_USE_TLS}"
+
+paths:
+  # Path to Qwen-filtered corpus (Stage 2 output)
+  final_relevant_jsonl: "data/processed/final_relevant.jsonl"
+
+  # Web-friendly normalized corpus used for indexing
+  web_corpus_jsonl: "data/web_corpus.jsonl"
+
+  # LanceDB directory (vector + FTS index lives here)
+  lancedb_dir: "cache/lancedb"
+
+index:
+  table_name: "papers"
+
+  # Include OpenAlex abstract in retrieval text
+  # Recommended: true
+  include_abstract: true
+
+  # Include author affiliations in retrieval text
+  # Helps institution-based search
+  include_affiliations: true
+
+  # For debugging only: limit corpus size (null = use all)
+  max_docs: null
+
+  # Which columns get FTS (BM25) index
+  # Usually only ["text"]
+  fts_columns: ["text"]
+
+  # Rebuild FTS index each time build_index runs
+  fts_replace: true
+
+
+# -------------------------
+# EMBEDDING MODEL (Dense Retrieval)
+# -------------------------
+# embedding:
+#   provider: "nvidia_hf"
+#   model_name: "/supernova/data/lekhak/models/nvidia/llama-nv-embed-reasoning-3b"
+#   normalize_embeddings: true
+#   use_gpu: true
+#   batch_size: 16
+#   max_length: 4096
+#   trust_remote_code: true
+#   device: "cuda:1"
+#   dtype: "bfloat16"
+#   device_map: null
+
+embedding:
+  provider: "flag_embedding"
+  model_name: "BAAI/bge-m3"
+  normalize_embeddings: true
+  use_gpu: true
+  batch_size: 16
+  max_length: 512
+  trust_remote_code: false
+  device: "cuda:0"
+
+
+rerank:
+  enabled: true
+  provider: "flag_embedding"
+  model_name: "BAAI/bge-reranker-base"
+  use_gpu: true
+  batch_size: 16
+  max_length: 1024
+  max_candidates: 50
+  trust_remote_code: false
+  device: "cuda:0"
+
+# -------------------------
+# CROSS-ENCODER RERANKER
+# -------------------------
+# rerank:
+#   enabled: true
+#   provider: "nvidia_hf"
+#   model_name: "/supernova/data/lekhak/models/nvidia/llama-nemotron-rerank-1b-v2"
+#   use_gpu: true
+#   batch_size: 16
+#   max_length: 4096
+#   max_candidates: 50
+#   trust_remote_code: true
+#   device: "cuda:1"
+#   dtype: "bfloat16"
+#   device_map: null
+
+
+# -------------------------
+# HYBRID SEARCH PARAMETERS
+# -------------------------
+search:
+  # BM25 candidates
+  # 100-300 typical
+  k_lex: 200
+
+  # Dense vector candidates
+  # 100-300 typical
+  k_dense: 200
+
+  # RRF fusion constant
+  # 50-100 typical
+  rrf_k: 60
+
+  # Final results returned per page
+  top_k: 20
+
+
+# -------------------------
+# UI / FACET CONFIG
+# -------------------------
+ui:
+  # Max facet values shown in UI lists
+  max_facet_values: 50
+
+ask_ai:
+  enabled: true
+  provider: "vllm_openai"
+  model_path: "/supernova/data/lekhak/models/Qwen/Qwen3-4B-Instruct-2507"
+  model_name: "Qwen3-4B-Instruct-2507"
+  gpu_device: "0"
+  host: "127.0.0.1"
+  port: 5889
+  base_url: "http://127.0.0.1:5889/v1"
+  api_key: "EMPTY"
+  dtype: "bfloat16"
+  max_model_len: 8192
+  gpu_memory_utilization: 0.35
+  max_num_seqs: 16
+  temperature: 0.0
+  top_p: 1.0
+  max_new_tokens: 1200
+  max_context_records: 15
+  max_question_chars: 2000
+  conversation_history_turns: 4
+  manage_vllm: true
+  startup_timeout_sec: 300
+  structured_output: true
+  query_planning:
+    enabled: true
+    min_search_queries: 1
+    max_search_queries: 15
+    max_query_chars: 160
+    top_k_per_query: 15
+    max_tokens: 512
+    temperature: 0.0
+    structured_output: true
+
+llm:
+  model_path: /supernova/data/lekhak/models/Qwen2.5-14B-Instruct
+  batch_size: 500
+  gpu_memory_utilization: 0.80
+  max_model_len: 8192
+  disable: false
+
+species_pipeline:
+  cache_file: data/species_cache.json
+  sqlite_file: data/species_split.sqlite
+
+  # Services
+  gbif_port: 5643
+  gnparser_port: 5644
+  gbif_timeout: 15
+  gnparser_timeout: 20
+  gbif_concurrency: 24
+  gnparser_batch: 200
+
+  # GBIF filtering
+  gbif_accept_ranks: [SPECIES, SUBSPECIES]
+  gbif_accept_matchtypes: [EXACT, FUZZY, HIGHERRANK]
+  gbif_min_conf: 0
+
+  # Dedupe (only for unresolved mentions)
+  dedup_threshold: 98
+
+  coarse:
+    scientific_to_genus: true
+    commonname_collapse: true
+
+  vernacular_sqlite: data/vernacular_index.sqlite
+  vernacular_validate: true
+  vernacular_topk: 10
+  vernacular_validate_top: 3
+  vernacular_two_pass: true
+  vernacular_drop_geo_default: false

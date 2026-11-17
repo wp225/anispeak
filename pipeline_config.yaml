@@ -1,0 +1,20 @@
+paths:
+  snapshot_dir:    "data/openalex"
+  bert_output_dir: "data/processed"
+  bert_model:      "data/models/bert"
+  bert_config:     "configs/bert_classifier.yaml"
+  qwen_model:      "/supernova/data/lekhak/models/Qwen2.5-14B-Instruct"
+
+download:
+  workers: 8
+
+bert:
+  # Adjust gpu_configs per available GPU memory.
+  # Format: "<device_id>:batch=<N>,chunk=<N>,queue=<N>,readers=<N>"
+  gpu_configs: "0:batch=2048,chunk=16384,queue=4,readers=2"
+  threshold: 0.45
+  year_start: 2000
+  # year_end defaults to current year at runtime
+
+qwen:
+  gpu_mem_util: 0.72

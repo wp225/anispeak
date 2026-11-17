@@ -1,0 +1,21 @@
+{% extends "base/layout.html" %}
+
+{% block title %}Sign in · AniSpeakArchive{% endblock %}
+
+{% block content %}
+  <div class="auth-card">
+    <h1>Sign in</h1>
+    <div style="font-size:13px; color: rgba(17,24,39,0.75); margin-bottom: 10px;">
+      Enter your academic email. We will send a one-time code.
+    </div>
+
+    <div style="font-size:13px; color: rgba(17,24,39,0.75); margin-bottom: 10px;">
+      For access, please use a <strong>.edu</strong> email.
+    </div>
+
+    <form class="auth-form" method="post" action="{{ url_for('auth.login_send_otp') }}">
+      <input name="email" type="email" placeholder="you@university.edu" autocomplete="email" required />
+      <button class="btn btn-primary" type="submit">Send code</button>
+    </form>
+  </div>
+{% endblock %}

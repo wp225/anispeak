@@ -1,0 +1,31 @@
+{% extends "base/layout.html" %}
+{% block content %}
+<section class="page-header">
+  <div class="kicker">AniSpeakArchive</div>
+  <h1>Search animal communication research</h1>
+  <p class="lead muted">Hybrid retrieval + cross-encoder re-ranking. Built to support biological, computational, and animal linguistics work.</p>
+
+  <div class="hero-actions">
+    <a class="btn primary" href="{{ url_for('pages.search_page') }}">Open Search</a>
+    <a class="btn" href="{{ url_for('pages.about_page') }}">Learn more</a>
+  </div>
+</section>
+
+<div class="grid-3">
+  <div class="card">
+    <div class="card-icon">🔎</div>
+    <h2 class="h2">Seed + filter</h2>
+    <p class="muted">Start with a seed query, then narrow by species, domains, contexts, and linguistic/computational tags.</p>
+  </div>
+  <div class="card">
+    <div class="card-icon">⚡</div>
+    <h2 class="h2">Hybrid retrieval</h2>
+    <p class="muted">Combines lexical and semantic matching to bring both classic and modern work to the top.</p>
+  </div>
+  <div class="card">
+    <div class="card-icon">🧾</div>
+    <h2 class="h2">Citations &amp; exports</h2>
+    <p class="muted">Open details, copy formatted citations, or export RIS for Zotero/Mendeley workflows.</p>
+  </div>
+</div>
+{% endblock %}

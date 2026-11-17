@@ -1,0 +1,38 @@
+<nav class="navbar">
+  <div class="nav-inner">
+
+    <a class="brand" href="{{ url_for('pages.search_page') }}" aria-label="AniSpeakArchive home">
+      <span class="brand-text">
+        <span class="brand-title">AniSpeakArchive</span>
+        <span class="brand-subtitle">Search &amp; explore animal communication &amp; bioacoustics literature</span>
+      </span>
+    </a>
+
+    <a class="brand-logo-center" href="{{ url_for('pages.search_page') }}" aria-label="AniSpeakArchive home">
+      <img
+        class="brand-logo-img"
+        src="{{ url_for('static', filename='img/icon.png') }}"
+        alt="AniSpeakArchive logo"
+        loading="lazy"
+      />
+    </a>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">☰</button>
+
+    <div class="nav-links" id="navLinks">
+      <a class="nav-link{% if request.path.startswith('/search') or request.path == '/' %} active{% endif %}" href="{{ url_for('pages.search_page') }}">Search</a>
+      <a class="nav-link{% if request.path.startswith('/analytics') %} active{% endif %}" href="{{ url_for('pages.analytics_page') }}">Analytics</a>
+      <a class="nav-link{% if request.path.startswith('/ask') %} active{% endif %}" href="{{ url_for('pages.ask_page') }}">Ask AI</a>
+      <a class="nav-link{% if request.path.startswith('/about') %} active{% endif %}" href="{{ url_for('pages.about_page') }}">About</a>
+
+      {% set cu = current_user if current_user is defined else None %}
+      {% if cu %}
+        <a class="nav-link{% if request.path.startswith('/profile') %} active{% endif %}" href="{{ url_for('auth.profile_page') }}">Library</a>
+        <a class="nav-link" href="{{ url_for('auth.logout') }}">Sign out</a>
+      {% else %}
+        <a class="nav-link{% if request.path.startswith('/login') or request.path.startswith('/verify') %} active{% endif %}" href="{{ url_for('auth.login_page') }}">Sign in</a>
+      {% endif %}
+    </div>
+
+  </div>
+</nav>

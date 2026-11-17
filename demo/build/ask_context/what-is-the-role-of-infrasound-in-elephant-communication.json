@@ -1,0 +1,75 @@
+{
+  "question": "What is the role of infrasound in elephant communication?",
+  "records": [
+    {
+      "citation_id": 1,
+      "id": "W7134231690",
+      "title": "Monitoring Zoo Elephant Rumble Activity Using Combined Seismic and Acoustic Data",
+      "year": 2026,
+      "abstract": "The communication of African and Asian elephants based on seismic and acoustic waves has been studied for decades. However, research within anthropogenic zoo environments, particularly with respect to seismic signals, remains limited compared to studies in natural habitats. This study analyzes low-frequency elephant rumbles recorded at the Opel-Zoo near Frankfurt am Main, Germany, by comparing characteristics from datasets obtained using non-invasive, co-located seismic and infrasound sensors. Analysis of recordings from August 2024 revealed over 1350 rumbles, indicating significant temporal variability. These rumbles are characterized by signal durations of 1-8 s and fundamental frequencies between 10 and 25 Hz, with harmonics above. Due to high seismic background noise during zoo opening hours, infrasound detections are more abundant during the day, while seismic and infrasound detection rates are comparable at night. The systematic nocturnal housing schedule of the elephants leads to an increase in rumbling activity approximately every second night, with one pair showing substantially higher vocal communication than the other. Many rumbles occur in rapid sequences within minutes, suggesting elephant interaction or external triggers. Most rumbles are accompanied by motion-induced signals associated with locomotion or trampling, phenomena not detectable with infrasound sensors measuring acoustic waves only. This highlights the value of combined seismic and infrasound data. To enable a robust automated classification of rumbles and noise for continuous monitoring, we train CNNs using spectrogram images of the hand-picked seismic and infrasound rumbles as inputs. The models achieve up to 98% classification accuracy, while cross-domain applications demonstrate better generalization and robustness of the CNN trained with seismic data. The seismo-acoustic monitoring approach and resulting findings have the potential to enhance our understanding of zoo elephant behavior, social interactions, and welfare."
+    },
+    {
+      "citation_id": 2,
+      "id": "W4244096879",
+      "title": "Elephant communication",
+      "year": 2000,
+      "abstract": "Elephants live in a complex society in which both long- and short-distance communication plays an important role in the ability to locate mates and to maintain intra- and inter-group cohesion. Elephants use a variety of sensory channels in ways both complementary and redundant to achieve this communication, as well as to advertise physiological states, allow reliable assessment of intent, and engage in other behaviors of group living. The majority of long-distance communication is probably via infrasonic vocalizations and chemical signals, whereas vocalizations, chemical signals, and visual and tactile displays all play a role in short-distance interactions. Although much is known about the general social and behavioral contexts of elephant communication signals, more work needs to be done to elucidate the specific role of many signals. The next critical step in the study of the elephant’s vocal repertoire is to collect and categorize the calls of known individuals for later playback experiments to confirm their function. In addition, the way that physiological state affects chemical signals and vice versa is worthy of further study, as is the role of chemical, acoustic, and perhaps seismic communication in long-distance communication. Tactile and visual displays have been qualitatively described, but there is a need to quantify their role in the dynamic behaviors (such as conflict management) that maintain elephant society. Finally, the way in which signals from multiple sensory channels interact has been little studied and provides a rich arena for future work. Zoo Biol 19:425–445, 2000. © 2000 Wiley-Liss, Inc."
+    },
+    {
+      "citation_id": 3,
+      "id": "W2996230117",
+      "title": "A Portable System for Detecting Infrasound Using a Microcontroller",
+      "year": 2019,
+      "abstract": "The purpose of this project was to create a device to detect infrasound communication from elephants. The device was designed and prototyped to be capable of monitoring an input signal for infrasound. If infrasound is detected, an audible alarm is sounded. This device can record audio signals for long periods of time to a digital storage device. It can be utilized for other areas of study with some modification. For example, by selecting appropriate sensors the device can be used for studying vibrations in structures. The device is low-cost so it would be able to be procured more easily and in higher quantities than more expensive and cumbersome laboratory monitoring equipment. This device could also be used as an educational and research device for students studying animal behavior in the field and laboratory. Infrasound is not limited to only elephants, but hippopotamuses, rhinoceroses and giraffes also communicate with infrasound. Environmental infrasound from sources such as wind turbines, sonic booms, explosions, tornadoes, and earthquakes can also be monitored."
+    },
+    {
+      "citation_id": 4,
+      "id": "W2046586801",
+      "title": "Auditory communication, meteorology and the Umwelt.",
+      "year": 2002,
+      "abstract": "Animal communication is affected by a multitude of environmental factors including meteorological conditions, ground reflection, turbulence, and vegetative attenuation. Evolutionary and behavioral adaptations by animals to these challenges include elephant use of infrasound optimized for long-distance propagation. These adaptations in turn influence the perceptual sphere, or Umwelt, of calling animals."
+    },
+    {
+      "citation_id": 5,
+      "id": "W2004262641",
+      "title": "Abiotic controls on elephant communication",
+      "year": 1994,
+      "abstract": "Atmospheric conditions conducive to long-range transmission of low-frequency sound as used by elephants are found to exist in the Etosha National Park in Namibia during the late dry season. Meteorological measurements show that strong temperature inversions form at the surface before sunset and decay with sunrise, often accompanied by calm wind conditions during the early evening. These observations are used in an acoustic model to determine the sensitivity of infrasound to the effects of (a) the strength, thickness, and elevation of temperature inversions, and (b) the growth and decay of an inversion typical of dry, elevated African savannas. The results suggest that elephant communication range more than doubles at night. Optimum conditions occur 1–2 h after sunset on clear, relatively cold, calm nights. At these times ranges of over 10 km are likely, with greatest amplification occurring at the lowest frequency tested. This strong diurnal cycle in communication range may be reflected in longer period changes in weather and may exert a significant influence on elephant behavior on time scales from days to many years."
+    },
+    {
+      "citation_id": 6,
+      "id": "W1908800688",
+      "title": "Atmospheric Controls On Elephant Communication",
+      "year": 1995,
+      "abstract": "Atmospheric conditions conducive to long-range transmission of low-frequency sound as used by elephants are found to exist in the Etosha National Park in Namibia during the late dry season. Meteorological measurements show that strong temperature inversions form at the surface before sunset and decay with sunrise, often accompanied by calm wind conditions during the early evening. These observations are used in an acoustic model to determine the sensitivity of infrasound to the effects of (a) the strength, thickness and elevation of temperature inversions, and (b) the growth and decay of an inversion typical of dry, elevated African savannas. The results suggest that the range over which elephants communicate more than doubles at night. Optimum conditions occur 1-2 h after sunset on clear, relatively cold, calm nights. At these times, ranges of over 10 km are likely, with the greatest amplification occurring at the lowest frequency tested. This strong diurnal cycle in communication range may be reflected in longer-lasting changes in weather and may exert a significant influence on elephant behaviour on time scales from days to many years."
+    },
+    {
+      "citation_id": 7,
+      "id": "W3217366713",
+      "title": "Infrasound as a Cue for Seabird Navigation",
+      "year": 2021,
+      "abstract": "Seabirds are amongst the most mobile of all animal species and spend large amounts of their lives at sea. They cross vast areas of ocean that appear superficially featureless, and our understanding of the mechanisms that they use for navigation remains incomplete, especially in terms of available cues. In particular, several large-scale navigational tasks, such as homing across thousands of kilometers to breeding sites, are not fully explained by visual, olfactory or magnetic stimuli. Low-frequency inaudible sound, i.e., infrasound, is ubiquitous in the marine environment. The spatio-temporal consistency of some components of the infrasonic wavefield, and the sensitivity of certain bird species to infrasonic stimuli, suggests that infrasound may provide additional cues for seabirds to navigate, but this remains untested. Here, we propose a framework to explore the importance of infrasound for navigation. We present key concepts regarding the physics of infrasound and review the physiological mechanisms through which infrasound may be detected and used. Next, we propose three hypotheses detailing how seabirds could use information provided by different infrasound sources for navigation as an acoustic beacon, landmark, or gradient. Finally, we reflect on strengths and limitations of our proposed hypotheses, and discuss several directions for future work. In particular, we suggest that hypotheses may be best tested by combining conceptual models of navigation with empirical data on seabird movements and in-situ infrasound measurements."
+    },
+    {
+      "citation_id": 8,
+      "id": "W2043665623",
+      "title": "Seismic waves from elephant vocalizations: A possible communication mode?",
+      "year": 2004,
+      "abstract": "We conducted experiments with trained African elephants that show that low‐frequency elephant vocalizations produce Rayleigh waves. We model a potential range for these seismic waves, under ideal conditions, of c. 2 km. In appropriate conditions, surface waves from an elephant's infrasonic vocalizations might propagate further than airborne sound and provide advantages over acoustic communication. However, if we use the detection capabilities of the human ear as a benchmark for the signal‐detection thresholds of elephants, our estimates of attenuation and ambient seismic noise suggest that the seismic detection range is unlikely to exceed the acoustic detection range under normal atmospheric conditions. We conclude that elephants may benefit from seismic detection in circumstances where the range of acoustic communication is limited, or in cases where multimodal communication is advantageous. Given our current understanding, elephants are unlikely to rely on seismic waves as their primary mode for long‐range communication."
+    },
+    {
+      "citation_id": 9,
+      "id": "W2726594122",
+      "title": "Effects of infrasound generated in urban areas on health of people and animals – an attempt to localize environmental infrasound sources using computer simulations",
+      "year": 2015,
+      "abstract": "Introduction.Inaudible but ubiquitous environmental infrasound undoubtedly affects the frame of mind and health of humans.Objective.The object of the study is to prove that civil engineering objects can be sources of infrasound, and a review of the literature on effects of infrasound on the health of people and animals.Methods.Computer simulation of an air flow around a typical element of outdoor infrastructure.The simulation was carried out using the author's computer programme, based on Discrete Vortex Method algorithms. Results and conclusions.The numerical experiment clearly proved that industrial objects can be sources of infrasonic noise during windy weather.The picture of air flow around a cylinder shows that regular turbulent motion is a source of sound with one dominating frequency.The sound once generated propagate far from its source.Frequency and intensity of the sound depends on wind velocity and shape of the object.Further research in this area are advisable."
+    },
+    {
+      "citation_id": 10,
+      "id": "W4387448364",
+      "title": "Albatross movement suggests sensitivity to infrasound cues at sea",
+      "year": 2023,
+      "abstract": "The ways in which seabirds navigate over very large spatial scales remain poorly understood. While olfactory and visual information can provide guidance over short distances, their range is often limited to 100s km, far below the navigational capacity of wide-ranging animals such as albatrosses. Infrasound is a form of low-frequency sound that propagates for 1,000s km in the atmosphere. In marine habitats, its association with storms and ocean surface waves could in effect make it a useful cue for anticipating environmental conditions that favor or hinder flight or be associated with profitable foraging patches. However, behavioral responses of wild birds to infrasound remain untested. Here, we explored whether wandering albatrosses, Diomedea exulans , respond to microbarom infrasound at sea. We used Global Positioning System tracks of 89 free-ranging albatrosses in combination with acoustic modeling to investigate whether albatrosses preferentially orientate toward areas of ‘loud’ microbarom infrasound on their foraging trips. We found that in addition to responding to winds encountered in situ, albatrosses moved toward source regions associated with higher sound pressure levels. These findings suggest that albatrosses may be responding to long-range infrasonic cues. As albatrosses depend on winds and waves for soaring flight, infrasonic cues may help albatrosses to identify environmental conditions that allow them to energetically optimize flight over long distances. Our results shed light on one of the great unresolved mysteries in nature, navigation in seemingly featureless ocean environments."
+    }
+  ]
+}

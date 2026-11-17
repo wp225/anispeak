@@ -1,0 +1,16 @@
+{% extends "base/layout.html" %}
+{% block title %}Paper - AniSpeakArchive{% endblock %}
+
+{% block content %}
+<section class="paper-page">
+  <div id="paper"></div>
+  <div id="similarPapers" class="card similar-papers-section"></div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  const DOC_ID = {{ doc_id|tojson }};
+</script>
+<script src="{{ url_for('static', filename='js/paper.js') }}"></script>
+{% endblock %}

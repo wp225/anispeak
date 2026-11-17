@@ -1,0 +1,161 @@
+{% extends "base/layout.html" %}
+{% block title %}About - AniSpeakArchive{% endblock %}
+
+{% block content %}
+<section class="page-header">
+  <div class="kicker">About</div>
+  <h1>AniSpeakArchive</h1>
+  <p class="lead">A research-grade, corpus-scale search engine for animal communication and bioacoustics literature, designed for an ACL-style system demonstration.</p>
+</section>
+
+<div class="card" style="margin-top: 10px;">
+  <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:16px; flex-wrap:wrap;">
+    <div style="min-width: 260px;">
+      <h2 class="h2" style="margin-bottom: 6px;">Corpus snapshot (web index)</h2>
+      <p class="muted" style="margin-top: 0;">These figures describe the <b>web-facing LanceDB index</b> currently served by the demo.</p>
+    </div>
+
+    <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:center; justify-content:flex-end;">
+      <span class="pill"><b>49,743</b> papers indexed</span>
+      <span class="pill"><b>61,022</b> raw species fields</span>
+      <span class="pill"><b>17,383</b> cleaned species mentions</span>
+      <span class="pill"><b>12,369</b> GBIF usageKey matches (71.2%)</span>
+    </div>
+  </div>
+</div>
+
+<div class="grid-2" style="margin-top: 18px;">
+  <div class="card">
+    <h2 class="h2">What is the task?</h2>
+    <p class="muted">AniSpeakArchive targets a broad interdisciplinary corpus with <b>three equally valid research traditions</b>:</p>
+    <ul class="list">
+      <li><b>Biological</b>: ethology, ecology, behavioral biology of communication (call function, acoustic ecology, sexual selection, signaling evolution).</li>
+      <li><b>Computational</b>: ML/DL/signal processing on animal signals (species ID, call-type classification, PAM pipelines, foundation models).</li>
+      <li><b>Animal linguistics</b>: structural analysis (syntax, compositionality, referential calls, repertoire structure, turn-taking).</li>
+    </ul>
+
+    <details class="details" open>
+      <summary>Strict relevance rules (high precision)</summary>
+      <div class="details-body">
+        <p class="muted" style="margin-top: 0;">A paper is marked irrelevant only when it is clearly outside animal communication/signaling. Typical exclusions:</p>
+        <ul class="list">
+          <li>Human speech/NLP with no animal signal data and no explicit animal comparison.</li>
+          <li>Medical studies using animals only as disease models (animal as a tool, not the subject of communication study).</li>
+          <li>General ML/robotics/vision with no biological animal data.</li>
+          <li>Industrial signal processing (machines, vibration, motors, pipelines).</li>
+          <li>Animal-named optimization algorithms (e.g., whale optimizer) without animal signals.</li>
+        </ul>
+      </div>
+    </details>
+  </div>
+
+  <div class="card">
+    <h2 class="h2">How search works (online)</h2>
+    <p class="muted">Search is hybrid and optimized for research workflows: start with a <b>seed topic query</b>, then narrow using facets.</p>
+    <div class="timeline">
+      <div class="t-item"><div class="t-dot"></div><div><div class="t-title">1) Hybrid retrieval</div><div class="muted">BM25 full-text + dense embeddings, fused with Reciprocal Rank Fusion (RRF).</div></div></div>
+      <div class="t-item"><div class="t-dot"></div><div><div class="t-title">2) Cross-encoder re-ranking</div><div class="muted">Top candidates are re-scored with a cross-encoder to improve ordering for nuanced queries.</div></div></div>
+      <div class="t-item"><div class="t-dot"></div><div><div class="t-title">3) Facets and evidence</div><div class="muted">Filters come from bibliographic fields and title/abstract extraction; inferred labels include evidence phrases.</div></div></div>
+    </div>
+    <div class="callout" style="margin-top: 12px;">
+      <div class="callout-title">Retrieval stack (as configured)</div>
+      <ul class="list">
+        <li><b>Dense encoder</b>: BAAI/bge-m3 (embeddings)</li>
+        <li><b>Lexical</b>: LanceDB Full-Text Search (BM25)</li>
+        <li><b>Fusion</b>: RRF over lexical + dense</li>
+        <li><b>Re-ranker</b>: BAAI/bge-reranker-base</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="card" style="margin-top: 18px;">
+  <h2 class="h2">End-to-end corpus construction (offline)</h2>
+  <p class="muted">The web corpus is the end of a larger pipeline built to scan OpenAlex at scale and produce a high-quality animal communication subset.</p>
+
+  <div class="grid-2" style="margin-top: 10px;">
+    <div>
+      <h3 style="margin: 0 0 8px;">1) Data source: OpenAlex</h3>
+      <p class="muted" style="margin-top: 0;">We start from OpenAlex snapshots and apply conservative filters before classification.</p>
+      <ul class="list">
+        <li>Records checked: <b>410,527,495</b></li>
+        <li>Filtered by year/lang/retracted: <b>123,069,553</b></li>
+        <li>Filtered by type: <b>6,763,285</b></li>
+        <li>Filtered by status: <b>162,665,638</b></li>
+        <li>Deduplicated: <b>19,853</b></li>
+      </ul>
+    </div>
+    <div>
+      <h3 style="margin: 0 0 8px;">2) Broad pre-filter + classifier</h3>
+      <p class="muted" style="margin-top: 0;">A SciBERT classifier is used to retain recall and avoid missing biological (non-ML) animal communication papers.</p>
+      <ul class="list">
+        <li>Sent to BERT: <b>118,009,166</b> (28.75%)</li>
+        <li>BERT positives: <b>100,940</b> (threshold=0.4)</li>
+        <li>Time: <b>1,658.0 min</b>; Throughput: <b>4,127 rec/s</b></li>
+      </ul>
+      <details class="details">
+        <summary>SciBERT training results (held-out test set)</summary>
+        <div class="details-body">
+          <ul class="list">
+            <li>Macro-F1: <b>0.9555</b> (primary ablation metric)</li>
+            <li>Recall: <b>0.9632</b> (optimized to minimize misses)</li>
+            <li>Precision: <b>0.9469</b>; AUROC: <b>0.9805</b></li>
+            <li>Confusion: TP=1909, FP=107, FN=73, TN=1960</li>
+          </ul>
+        </div>
+      </details>
+    </div>
+  </div>
+
+  <div style="margin-top: 12px;">
+    <h3 style="margin: 0 0 8px;">3) Metadata extraction prompt (condensed)</h3>
+    <p class="muted" style="margin-top: 0;">For each relevant paper, a structured extractor assigns schema fields using <b>only</b> title + abstract, with strict evidence requirements. This powers facets like species, contexts, stages, features, domains, and resource flags.</p>
+
+    <details class="details" open>
+      <summary>Extractor policy highlights</summary>
+      <div class="details-body">
+        <ul class="list">
+          <li><b>Strict verification</b>: irrelevant only for clear out-of-scope cases (human-only NLP, industrial signals, etc.).</li>
+          <li><b>Evidence-backed tagging</b>: every inferred label must cite a real phrase from the title/abstract when applicable.</li>
+          <li><b>Species discipline</b>: extract only explicitly mentioned animals; bats are always category = <b>Bat</b>.</li>
+          <li><b>Resource flags</b>: Has code/dataset/benchmark are true only when explicitly stated in title/abstract.</li>
+          <li><b>Under-assign &gt; hallucinate</b>: if evidence is missing, leave the field empty.</li>
+        </ul>
+      </div>
+    </details>
+  </div>
+
+  <div style="margin-top: 12px;">
+    <h3 style="margin: 0 0 8px;">4) Species canonization</h3>
+    <p class="muted" style="margin-top: 0;">Raw species mentions are cleaned (plural normalization, prefix stripping, noise removal), then resolved against GBIF where possible. The resulting canonical forms drive the taxonomy facets and leaderboards.</p>
+    <ul class="list">
+      <li>Cleaned unique mentions: <b>17,383</b></li>
+      <li>Strict scientific-like: <b>7,887</b>; Vernacular/other: <b>9,463</b></li>
+      <li>GBIF usageKey coverage: <b>12,369 / 17,383</b> (71.2%)</li>
+    </ul>
+  </div>
+</div>
+
+<div class="card" style="margin-top: 18px;">
+  <h2 class="h2">UI/UX design choices for the demo</h2>
+  <div class="glossary">
+    <div class="g-item">
+      <div class="g-title">Seed query first</div>
+      <div class="muted">Facets narrow within a topical slice; they are not intended to replace topical retrieval.</div>
+    </div>
+    <div class="g-item">
+      <div class="g-title">Resource buttons</div>
+      <div class="muted">Has code/dataset/benchmark are clickable toggles (explicit evidence only).</div>
+    </div>
+    <div class="g-item">
+      <div class="g-title">Analytics is cached</div>
+      <div class="muted">Expensive groupby/explode analytics responses are cached on disk, keyed by LanceDB fingerprint.</div>
+    </div>
+    <div class="g-item">
+      <div class="g-title">Sentinels are hidden by default</div>
+      <div class="muted">The taxonomy sentinel "Others" is hidden by default in leaderboards (toggle available).</div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

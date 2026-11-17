@@ -1,0 +1,189 @@
+/* Page-scoped layout helpers (auth + library). Intentionally avoids redefining global .btn styles. */
+
+.auth-card {
+  max-width: 520px;
+  margin: 28px auto;
+  background: #ffffff;
+  border: 1px solid rgba(17, 24, 39, 0.08);
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 10px 30px rgba(17, 24, 39, 0.06);
+}
+
+/* Wider shell for the Library page (profile.html). Keeps auth forms compact. */
+.library-card {
+  max-width: 1100px;
+  padding: 20px;
+}
+
+.toast-host {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 9999;
+}
+
+.toast {
+  opacity: 0;
+  transform: translateY(6px);
+  transition: all 0.2s ease;
+  background: rgba(17, 24, 39, 0.95);
+  color: white;
+  padding: 10px 12px;
+  border-radius: 12px;
+  font-size: 13px;
+  max-width: 360px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.toast.ok { background: rgba(16, 185, 129, 0.95); }
+.toast.warn { background: rgba(245, 158, 11, 0.95); }
+.toast.error { background: rgba(239, 68, 68, 0.95); }
+
+.profile-tabs {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  border: 1px solid rgba(17,24,39,0.15);
+  background: white;
+  border-radius: 999px;
+  padding: 8px 12px;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.tab-btn.active {
+  background: rgba(17,24,39,0.06);
+  border-color: rgba(17,24,39,0.2);
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+@media (max-width: 880px) {
+  .profile-grid { grid-template-columns: 1fr; }
+}
+
+.auth-card h1 {
+  font-size: 20px;
+  margin: 0 0 10px 0;
+}
+
+.auth-form {
+  display: grid;
+  gap: 12px;
+}
+
+.auth-form input {
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(17, 24, 39, 0.18);
+  font-size: 14px;
+  width: 100%;
+}
+
+.flash {
+  max-width: 760px;
+  margin: 10px auto 0 auto;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(17, 24, 39, 0.12);
+  background: rgba(17, 24, 39, 0.03);
+}
+
+.cookie-banner {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(17, 24, 39, 0.10);
+}
+
+.cookie-banner-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 10px 14px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cookie-banner-text {
+  font-size: 13px;
+  color: rgba(17, 24, 39, 0.85);
+}
+
+.cookie-banner-actions {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.bookmark-item {
+  border: 1px solid rgba(17, 24, 39, 0.10);
+  border-radius: 16px;
+  padding: 16px;
+  background: rgba(255,255,255,0.96);
+  box-shadow: 0 10px 24px rgba(17, 24, 39, 0.05);
+}
+
+.bookmark-item:hover {
+  box-shadow: 0 16px 40px rgba(17, 24, 39, 0.08);
+  border-color: rgba(79,70,229,0.25);
+}
+
+.bookmark-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.bookmark-title {
+  text-decoration: none;
+  color: #111827;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 1.25;
+}
+
+.bookmark-title:hover { text-decoration: underline; }
+
+.bookmark-actions {
+  display: inline-flex;
+  gap: 8px;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+
+.bookmark-meta {
+  margin-top: 8px;
+  font-size: 12px;
+  color: rgba(17, 24, 39, 0.7);
+}
+
+/* Legacy rules removed (replaced by .bookmark-title etc.) */

@@ -1,0 +1,38 @@
+FROM pytorch/pytorch:2.9.1-cuda12.8-cudnn9-devel
+
+WORKDIR /app
+
+ENV LIBRARY_PATH=/usr/local/cuda/lib64/stubs:${LIBRARY_PATH}
+ENV CUDA_HOME=/usr/local/cuda
+ENV PYTHONUNBUFFERED=1
+
+RUN pip install --upgrade pip setuptools wheel
+
+# ===== Core ML stack =====
+# Versions pinned to match verified working local environment (pip freeze).
+RUN pip install --no-cache-dir \
+    torch==2.9.1 \
+    torchvision==0.24.1 \
+    torchaudio==2.9.1 \
+    transformers==4.57.6 \
+    numpy==2.2.6 \
+    pandas==2.2.2 \
+    pyarrow==16.1.0
+
+# ===== vLLM isolated install =====
+RUN pip install --no-cache-dir vllm==0.16.0
+
+# ===== App dependencies =====
+COPY requirements_running_env.txt .
+RUN pip install --no-cache-dir -r requirements_running_env.txt
+
+# ===== Project code =====
+COPY pipeline.py pipeline_config.yaml ./
+COPY pipeline_scripts/ pipeline_scripts/
+COPY configs/ configs/
+COPY scripts/ scripts/
+
+# corpus/ is NOT copied into the image (~100GB).
+# It is mounted read-only via docker-compose (see docker-compose.yml pipeline volumes).
+
+CMD ["python", "pipeline.py"]

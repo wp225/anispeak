@@ -1,0 +1,71 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual envs / conda
+.venv/
+venv/
+env/
+
+# Data (large files — not tracked in git)
+data/
+cache/
+*.log
+*.jsonl
+*.gz
+*.parquet
+
+# Models / embeddings
+*.bin
+*.pt
+*.safetensors
+
+# Large data files (should live under data/ or cache/, but guard globally)
+*.sqlite
+*.db
+*.tsv
+*.csv
+
+# OS / editor
+.DS_Store
+*.swp
+*.swo
+.idea/
+.vscode/
+*.code-workspace
+
+# Secrets
+.env
+*.env.*
+secrets.*
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Test / coverage artifacts
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Runtime state
+pipeline_state.json
+
+# Claude internal
+.claude/
+
+# Static demo (see demo/README.md): keep build scripts and the site's data files
+!demo/build/
+!demo/site/data/
+!demo/site/data/embeddings.bin
+demo/build/raw/
+
+# Local tooling
+.playwright-mcp/
+.pytest_cache/
+.DS_Store

@@ -1,0 +1,98 @@
+{% extends "base/layout.html" %}
+{% block title %}Corpus Analytics - AniSpeakArchive{% endblock %}
+
+{% block content %}
+<section class="page-header">
+  <div class="kicker">Deep Data Insights</div>
+  <h1>Academic Analytics</h1>
+  <p class="lead muted">Multi-dimensional analysis of publications, active researchers, taxonomy trends, and research domains.</p>
+</section>
+
+<div class="container" style="padding: 0;">
+    <div class="stats-overview">
+        <div class="stat-card">
+            <div class="lbl">Total Papers</div>
+            <div class="stat-value" id="kpiPapers">-</div>
+        </div>
+        <div class="stat-card">
+            <div class="lbl">Total Authors</div>
+            <div class="stat-value" id="kpiAuthors">-</div>
+        </div>
+        <div class="stat-card">
+            <div class="lbl">Unique Species</div>
+            <div class="stat-value" id="kpiSpecies">-</div>
+        </div>
+        <div class="stat-card">
+            <div class="lbl">Avg. Authors / Paper</div>
+            <div class="stat-value" id="kpiAvgAuthors">-</div>
+        </div>
+    </div>
+
+    <div class="charts-grid-2">
+        <div class="chart-container">
+            <h3>📈 Publication Trends (1950 - Present)</h3>
+            <div class="chart-wrapper">
+                <canvas id="timelineChart"></canvas>
+            </div>
+        </div>
+        <div class="chart-container">
+            <h3>🏛️ Top Publication Venues</h3>
+            <div class="chart-wrapper">
+                <canvas id="venuesBarChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <div class="charts-grid-3">
+        <div class="chart-container">
+            <h3>🧬 Research Domains</h3>
+            <div class="chart-wrapper">
+                <canvas id="domainsChart"></canvas>
+            </div>
+        </div>
+        <div class="chart-container">
+            <h3>📡 Communication Modality</h3>
+            <div class="chart-wrapper">
+                <canvas id="modalitiesChart"></canvas>
+            </div>
+        </div>
+        <div class="chart-container">
+            <h3>🌍 Contexts</h3>
+            <div class="chart-wrapper">
+                <canvas id="contextsChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <div id="matrixLegend" class="muted" style="margin-top: 34px; margin-bottom: 10px; font-size: 0.92rem;"></div>
+    <h2 style="margin: 8px 0 15px; border-bottom: 2px solid var(--border2); padding-bottom: 10px;">🏆 Top 100 Active Researchers (Last 8 Years)</h2>
+    <div id="authorProfilesContainer"></div>
+
+    <h2 style="margin: 40px 0 15px; border-bottom: 2px solid var(--border2); padding-bottom: 10px;">🏫 Top 100 Institutions (Last 8 Years)</h2>
+    <div id="institutionProfilesContainer"></div>
+
+    <h2 style="margin: 40px 0 15px; border-bottom: 2px solid var(--border2); padding-bottom: 10px;">🏷️ Taxonomy & Feature Leaderboards</h2>
+    <div class="leaderboards-grid" id="leaderboardsContainer">
+        </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="{{ url_for('static', filename='js/analytics.js') }}"></script>
+<style>
+/* Safe overrides for chart containers to prevent infinite scaling */
+.chart-wrapper { position: relative; height: 320px; width: 100%; }
+.table-wrapper { max-height: 450px; overflow-y: auto; border: 1px solid var(--border2); border-radius: 8px; }
+.simple-table th { position: sticky; top: 0; background: var(--card); z-index: 10; box-shadow: 0 2px 4px rgba(0,0,0,0.04); }
+
+/* Compact tags for the complex tables */
+.micro-tag {
+    display: inline-block; background: rgba(79,70,229,.1); color: var(--accent);
+    padding: 2px 6px; border-radius: 4px; font-size: 0.7rem; font-weight: 600;
+    margin: 2px 2px 0 0; border: 1px solid rgba(79,70,229,.2); white-space: nowrap;
+}
+.micro-tag.venue { background: #fef3c7; color: #d97706; border-color: #fde68a; }
+.micro-tag.species { background: #dcfce7; color: #15803d; border-color: #bbf7d0; }
+</style>
+{% endblock %}

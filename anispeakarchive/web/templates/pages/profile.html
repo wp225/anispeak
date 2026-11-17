@@ -1,0 +1,29 @@
+{% extends "base/layout.html" %}
+
+{% block title %}Library · AniSpeakArchive{% endblock %}
+
+{% block content %}
+  <div class="auth-card library-card">
+    <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px; flex-wrap:wrap;">
+      <div>
+        <h1 style="margin:0;">Library</h1>
+        <div style="font-size:13px; color: rgba(17,24,39,0.75); margin-top:6px;">
+          Signed in as <b>{{ user.email }}</b>
+        </div>
+      </div>
+      <div style="display:flex; gap:10px; align-items:center;">
+        <a class="btn sm" href="{{ url_for('auth.logout') }}">Sign out</a>
+      </div>
+    </div>
+
+    <div class="profile-tabs" style="margin-top:16px;">
+      <button class="tab-btn active" data-tab="papers">Saved papers</button>
+      <button class="tab-btn" data-tab="collections">Buckets</button>
+    </div>
+
+    <div id="tab-papers" class="tab-pane" style="margin-top:14px;"></div>
+    <div id="tab-collections" class="tab-pane" style="margin-top:14px; display:none;"></div>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/profile.js') }}"></script>
+{% endblock %}

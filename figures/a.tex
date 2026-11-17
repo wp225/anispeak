@@ -1,0 +1,198 @@
+\noindent All figures in this section are derived from the curated
+\textsc{AniSpeakArchive} (ASA) corpus, a domain-specific literature archive and
+discovery platform for animal communication research.
+\HL{placeholder comment cite AniSpeakArchive here}
+The methodology, terminology, category definitions, and all descriptive statistics
+reported in the plots below are derived from the AniSpeakArchive corpus and its
+annotation framework.
+\HL{Need to discuss the methodology in more detail here.}
+ % New plots by H
+\paragraph{Publication Growth and the 2000 Contrast Point.}
+
+\figref{fig:publication_trends} shows that the traditional literature provides the
+long historical backbone of the field, whereas computational and hybrid work remains
+limited until the early 2000s and then expands much more visibly in the following
+years. The most pronounced acceleration appears after roughly 2015, consistent with
+the broader uptake of deep learning, large-scale audio processing pipelines, and more
+widely available open-source machine learning tools in bioacoustics and related areas.
+We therefore use 2000 as a coarse corpus-level contrast point for the comparative
+analyses below, while noting that the strongest recent inflection in
+computational-oriented growth occurs in the mid-2010s. The terminal bin (2025+) is
+partial because metadata consolidation and indexing typically lag the nominal
+publication year.
+
+\begin{figure}[th]
+  \centering
+  \includegraphics[width=0.95\linewidth]{figures_trends_new/publication_trends_two_groups.pdf}
+  \caption{Annual publication counts in \textsc{AniSpeakArchive} (1950--2026),
+    stratified into traditional and computational-oriented research traditions.}
+  \label{fig:publication_trends}
+\end{figure}
+
+%% ── Authorship ───────────────────────────────────────────────────────────────
+\paragraph{Authorship Patterns.}
+
+\figref{fig:top_authors} indicates that the traditional and computational-oriented
+literatures are not simply two views of the same author community. The traditional
+side is broader and more historically accumulated, whereas the computational-oriented
+side is anchored by a smaller set of recurring contributors, suggesting a more
+specialized methodological community at the intersection of animal behavior,
+bioacoustics, signal processing, and machine learning.
+
+\begin{figure}[th]
+  \centering
+  \includegraphics[width=0.85\linewidth]{figures_trends_new/top_authors_dual.pdf}
+  \caption{Most prolific authors in \textsc{AniSpeakArchive}, shown separately for
+    traditional and computational-oriented research traditions.}
+  \label{fig:top_authors}
+\end{figure}
+
+%% ── Venues and institutions ──────────────────────────────────────────────────
+\paragraph{Publication Venues and Institutional Affiliations.}
+
+\figref{fig:top_venues} and \figref{fig:top_institutions} show that both traditions
+share some core publication infrastructure, but they are not distributed identically
+across venues or institutions. The logarithmic scaling in the venue plot makes clear
+that a small number of outlets dominate the archive, with the
+\textit{Journal of the Acoustical Society of America} occupying a particularly central
+position. At the same time, the institutional profile suggests that computationally
+oriented work is concentrated in a narrower subset of research groups, again
+consistent with a more specialized technical subcommunity.
+
+\begin{figure}[th]
+  \centering
+  \begin{subfigure}{\linewidth}
+    \centering
+    \includegraphics[width=0.95\linewidth]{figures_trends_new/top_venues_dual.pdf}
+    \caption{Most frequent publication venues (log scale).}
+    \label{fig:top_venues}
+  \end{subfigure}
+  \par\vspace{0.9em}
+  \begin{subfigure}{\linewidth}
+    \centering
+    \includegraphics[width=0.95\linewidth]{figures_trends_new/top_institutions_dual.pdf}
+    \caption{Most productive institutional affiliations.}
+    \label{fig:top_institutions}
+  \end{subfigure}
+  \caption{Publication venues (top) and institutional affiliations (bottom) in
+    \textsc{AniSpeakArchive}, each stratified by research tradition.}
+  \label{fig:venues_institutions}
+\end{figure}
+
+%% ── Taxa and features ────────────────────────────────────────────────────────
+\paragraph{Taxa and Communication Features.}
+
+\figref{fig:top_species} shows substantial overlap in organismal focus across the two
+traditions, with cetaceans and bats occupying especially prominent positions in both.
+This likely reflects the strong role of acoustically rich and methodologically tractable
+systems in the archive. Passerine songbirds appear relatively more prominent in the
+traditional literature, consistent with their longstanding importance in behavioral and
+comparative studies of vocal communication. \figref{fig:top_features} shows that the
+two traditions also differ in analytic emphasis: traditional work is more closely tied
+to established biological descriptors of signaling behavior, whereas the
+computational-oriented literature places greater weight on features that are amenable
+to automated extraction, representation, and classification.
+
+\begin{figure}[th]
+  \centering
+  \includegraphics[width=0.85\linewidth]{figures_trends_new/top_species_dual.pdf}
+  \caption{Most frequently studied taxa by research tradition in
+    \textsc{AniSpeakArchive}. Labels reflect normalised common names; the catch-all
+    \emph{Other} category is excluded.}
+  \label{fig:top_species}
+\end{figure}
+
+\begin{figure}[th]
+  \centering
+  \includegraphics[width=0.85\linewidth]{figures_trends_new/top_features_dual_pct.pdf}
+  \caption{Most frequently analysed acoustic and linguistic features by research
+    tradition in \textsc{AniSpeakArchive}, expressed as shares of all feature
+    mentions within each tradition.}
+  \label{fig:top_features}
+\end{figure}
+
+%% ── Corpus composition ───────────────────────────────────────────────────────
+\paragraph{Overall Corpus Composition.}
+
+\figref{fig:domains_donut}, \figref{fig:contexts_donut}, and
+\figref{fig:modalities_donut} summarize the corpus at the global level, irrespective
+of tradition or period. Together, these plots show that the archive is heavily shaped
+by acoustically centered research, both in modality and in application focus. The
+context distribution further indicates that field-based and naturalistic studies remain
+the dominant empirical setting, even though computational analyses have become more
+visible. This overall composition is important for interpreting later comparisons,
+because methodological trends in the archive are still grounded primarily in vocal and
+audio-based animal communication research.
+
+\begin{figure}[th]
+  \centering
+  \includegraphics[width=0.72\linewidth]{figures_trends_new/domains_donut.pdf}
+  \caption{Distribution of application domains across the full
+    \textsc{AniSpeakArchive} corpus.}
+  \label{fig:domains_donut}
+\end{figure}
+
+\begin{figure}[th]
+  \centering
+  \includegraphics[width=0.72\linewidth]{figures_trends_new/contexts_donut.pdf}
+  \caption{Distribution of research settings across the full
+    \textsc{AniSpeakArchive} corpus.}
+  \label{fig:contexts_donut}
+\end{figure}
+
+\begin{figure}[th]
+  \centering
+  \includegraphics[width=0.72\linewidth]{figures_trends_new/modalities_donut.pdf}
+  \caption{Distribution of communication modalities across the full
+    \textsc{AniSpeakArchive} corpus.}
+  \label{fig:modalities_donut}
+\end{figure}
+
+%% ── Lexical shifts ───────────────────────────────────────────────────────────
+\paragraph{Lexical Shifts Before and After 2000.}
+
+To complement the count-based summaries above, we examine how abstract-level
+vocabulary changes across the 2000 contrast point using TF-IDF scoring and word
+clouds. \figref{fig:tfidf_top_terms} highlights the dominant terms within each period,
+revealing a shift from earlier biologically oriented vocabularies toward a more
+methodologically explicit lexicon in the later period. \figref{fig:tfidf_delta}
+makes this transition more explicit by identifying terms whose relative prominence
+increases or decreases most strongly after 2000. \figref{fig:wordcloud_prepost}
+provides a complementary qualitative view, making it easier to see how the later
+literature becomes more saturated with technical and computational terminology.
+
+\begin{figure}[th]
+  \centering
+  \includegraphics[width=0.88\linewidth]{figures_trends_new/tfidf_top_terms_2000.pdf}
+  \caption{Dominant abstract terms before and after 2000, ranked by mean TF-IDF
+    within each period.}
+  \label{fig:tfidf_top_terms}
+\end{figure}
+
+\begin{figure}[th]
+  \centering
+  \includegraphics[width=0.72\linewidth]{figures_trends_new/tfidf_delta_2000.pdf}
+  \caption{Change in mean TF-IDF across the 2000 contrast point (post-2000 minus
+    pre-2000). Positive values indicate terms that gained relative prominence after
+    2000; negative values indicate decline.}
+  \label{fig:tfidf_delta}
+\end{figure}
+
+\begin{figure}[th]
+  \centering
+  \begin{subfigure}{0.49\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures_trends_new/wordcloud_pre2000.pdf}
+    \caption{Pre-2000}
+    \label{fig:wordcloud_pre2000}
+  \end{subfigure}\hfill
+  \begin{subfigure}{0.49\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures_trends_new/wordcloud_post2000.pdf}
+    \caption{Post-2000}
+    \label{fig:wordcloud_post2000}
+  \end{subfigure}
+  \caption{Abstract-term word clouds before and after 2000 in \textsc{AniSpeakArchive}.
+    Word size reflects relative prominence within each period.}
+  \label{fig:wordcloud_prepost}
+\end{figure}

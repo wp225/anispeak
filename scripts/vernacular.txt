@@ -1,0 +1,19 @@
+docker compose up -d gbif
+
+# 1) Create data/gbif_vernacular.tsv
+python scripts/make_gbif_vernacular_tsv.py \
+  --gbif-base http://127.0.0.1:5643/v2 \
+  --backbone-zip data/gbif_backbone.zip \
+  --out-tsv data/gbif_vernacular.tsv \
+  --workers 8 \
+  --queue-size 50000 \
+  --progress-every 1.0 \
+  --log logs/make_gbif_vernacular_tsv.log \
+  --verbose
+
+# 2) Now your original command should work
+python scripts/build_vernacular_index.py build \
+  --vernacular-tsv data/gbif_vernacular.tsv \
+  --out-sqlite data/vernacular_index.sqlite \
+  --gbif-base http://127.0.0.1:5643/v2 \
+  --limit 2000000

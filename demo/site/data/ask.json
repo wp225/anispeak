@@ -1,0 +1,461 @@
+[
+ {
+  "question": "What vocalizations do humpback whales use to communicate?",
+  "answer_markdown": "Humpback whales are best known for **song**: long, structured sequences produced mainly by males, especially during the breeding season [5][10].\n\n### How song is structured\n- Songs are hierarchical: individual sounds (**units**) are grouped into **phrases**, and phrases into **themes** [9][5]. Units typically last 1–2 s with similar silent gaps, and some carry harmonics above 22 kHz, giving song a broader frequency range than earlier recordings suggested [9].\n- Measured source levels reach roughly 171–189 dB re 1 µPa at 1 m [9].\n- The repertoire includes harmonic sounds, non-harmonic sounds and pulsed sounds. Many units also contain **non-linear features** such as frequency jumps, chaos, subharmonics and biphonation, which are produced by the vibrating membranes of the larynx [2][4]. These non-linearities may carry information about body size and fitness [4].\n\n### Song as culture\nSong structure is shared across a population and changes over time, which strongly implies cultural transmission [5]. Humpbacks (and bowhead whales) are among the few baleen whales whose songs change within and between seasons, with individuals using vocal learning to converge on a shared version [6].\n\n### What song is for\nThe function is still debated:\n- **Sexual advertisement / mate competition** is the classic explanation [5].\n- **Organizing males**: off Maui, singers were usually lone adults that sang until joined by other males, and interactions were mostly non-agonistic, suggesting song helps coordinate male associations [10].\n- **Long-range sonar**: a minority view holds that singers use song echoes to locate other whales, with modelled ranges of up to about 6 km on breeding grounds [3][1]. Its proponents acknowledge that recordings of the echoes are still lacking [1].\n\nSong is not limited to breeding grounds. Tagged whales on an Antarctic feeding ground produced well-structured song while actively diving, in one case alongside feeding lunges [8].",
+  "confidence": "high",
+  "limitations": "Based on abstracts from a 476-paper demo sample. Non-song social sounds (for example feeding calls) are not well represented in the retrieved records.",
+  "references": [
+   {
+    "citation_id": 1,
+    "id": "W2808064178",
+    "title": "The Sonar Model for Humpback Whale Song Revised",
+    "year": 2018,
+    "authors": [
+     "Eduardo Mercado"
+    ],
+    "n_authors": 1,
+    "venue": "Frontiers in Psychology"
+   },
+   {
+    "citation_id": 2,
+    "id": "W4406761333",
+    "title": "Study of Non-Linearities in Humpback Whale Song Units",
+    "year": 2025,
+    "authors": [
+     "Yann Doh",
+     "Dorian Cazau",
+     "Giulia Lamaj"
+    ],
+    "n_authors": 9,
+    "venue": "Journal of Marine Science and Engineering"
+   },
+   {
+    "citation_id": 3,
+    "id": "W2151054198",
+    "title": "A sonar model for humpback whale song",
+    "year": 2000,
+    "authors": [
+     "L. Neil Frazer",
+     "Eduardo Mercado"
+    ],
+    "n_authors": 2,
+    "venue": "IEEE Journal of Oceanic Engineering"
+   },
+   {
+    "citation_id": 4,
+    "id": "W2531574694",
+    "title": "A study of vocal nonlinearities in humpback whale songs: from production mechanisms to acoustic analysis",
+    "year": 2016,
+    "authors": [
+     "Dorian Cazau",
+     "Olivier Adam",
+     "Thierry Aubin"
+    ],
+    "n_authors": 5,
+    "venue": "Scientific Reports"
+   },
+   {
+    "citation_id": 5,
+    "id": "W2063354442",
+    "title": "Humpback whale song: A new review",
+    "year": 2003,
+    "authors": [
+     "Adam S. Frankel"
+    ],
+    "n_authors": 1,
+    "venue": "The Journal of the Acoustical Society of America"
+   },
+   {
+    "citation_id": 6,
+    "id": "W4392405039",
+    "title": "Culture and traditions in vocal communication of cetaceans: a review (Cetartiodactyla: Cetacea)",
+    "year": 2024,
+    "authors": [
+     "Adéla Zvěřinová",
+     "Olga Šimková",
+     "Eva Landová"
+    ],
+    "n_authors": 3,
+    "venue": "Lynx new series"
+   },
+   {
+    "citation_id": 8,
+    "id": "W2037496439",
+    "title": "Humpback Whale Song and Foraging Behavior on an Antarctic Feeding Ground",
+    "year": 2012,
+    "authors": [
+     "Alison K. Stimpert",
+     "Lindsey E. Peavey Reeves",
+     "Ari S. Friedlaender"
+    ],
+    "n_authors": 4,
+    "venue": "PLoS ONE"
+   },
+   {
+    "citation_id": 9,
+    "id": "W2015246898",
+    "title": "Vertical array measurements of humpback whale songs",
+    "year": 2004,
+    "authors": [
+     "Whitlow W. L. Au",
+     "Marc O. Lammers",
+     "Adam A. Pack"
+    ],
+    "n_authors": 4,
+    "venue": "The Journal of the Acoustical Society of America"
+   },
+   {
+    "citation_id": 10,
+    "id": "W2010664263",
+    "title": "Humpback whale songs: Do they organize males during the breeding season?",
+    "year": 2006,
+    "authors": [
+     "Charles P. Nicklin",
+     "James D. Darling",
+     "Meagan E. Jones"
+    ],
+    "n_authors": 3,
+    "venue": "Behaviour"
+   }
+  ],
+  "n_retrieved": 10
+ },
+ {
+  "question": "How do birds learn songs from their parents?",
+  "answer_markdown": "In songbirds, the young usually learn from an **adult tutor** rather than strictly from a parent. In lab studies of zebra finches the tutor is typically an adult male, often the father, and only males sing [2][10].\n\n### Two phases of learning\n1. **Memorization**: during a sensitive period early in life, a juvenile listens to and memorizes adult song, forming an acoustic template [2][9]. Hearing a tutor's song activates the caudal pallium (an auditory region) rather than the song-production system, suggesting this is where the tutor memory is stored [10].\n2. **Sensorimotor practice**: the young bird then sings imperfect *plastic song* and gradually matches it to the template until it becomes stereotyped (crystallized) [1][9]. During this phase, neurons in the song nucleus HVC become selective for the bird's own song, likely shaped by auditory feedback [1].\n\nPractice is intensive. Juvenile zebra finches sing over a thousand times a day in dense clusters, and song structure advances during practice and partly regresses during rest [6].\n\n### Social contact matters\n- Passive playback of recorded song produces poor learning, whereas interactive or live tutoring works much better [2].\n- Even one day of social interaction with an adult tutor significantly improves learning, mainly by raising the pupil's attention to song [5]. Tutors also modify songs directed at pupils, much as humans adjust speech for infants [5].\n\n### Learning plus predispositions\nBirds raised without a tutor still sing, but their songs are abnormal, which points to an innate component [9]. Introductory notes before song are learned from the tutor yet still appear when the model lacks them [3]. Nightingales learn element sequences and song sequences in different ways [4].\n\nWhat a bird learns can also be biased by its environment: white-crowned sparrows tutored during traffic-noise playback preferentially copied higher-frequency songs that are less masked by noise [7].",
+  "confidence": "high",
+  "limitations": "Most evidence comes from a few laboratory species (zebra finch, white-crowned sparrow). Only some studies specify that the tutor is a parent.",
+  "references": [
+   {
+    "citation_id": 1,
+    "id": "W1769475717",
+    "title": "Development of neural selectivity for birdsong during vocal learning",
+    "year": 1993,
+    "authors": [
+     "Susan F. Volman"
+    ],
+    "n_authors": 1,
+    "venue": "Journal of Neuroscience"
+   },
+   {
+    "citation_id": 2,
+    "id": "W2092524481",
+    "title": "Birdsong learning in the laboratory, with especial reference to the song of the Zebra Finch (Taeniopygia guttata)",
+    "year": 2011,
+    "authors": [
+     "Sébastien Derégnaucourt"
+    ],
+    "n_authors": 1,
+    "venue": "Interaction Studies Social Behaviour and Communication in Biological and Artificial Systems"
+   },
+   {
+    "citation_id": 3,
+    "id": "W3122131887",
+    "title": "Introductory gestures before songbird vocal displays are shaped by learning and biological predispositions",
+    "year": 2021,
+    "authors": [
+     "Shikha Kalra",
+     "Vishruta Yawatkar",
+     "Logan S. James"
+    ],
+    "n_authors": 5,
+    "venue": "Proceedings of the Royal Society B Biological Sciences"
+   },
+   {
+    "citation_id": 4,
+    "id": "W2169912655",
+    "title": "THE ROLE OF HIERARCHY LEVELS IN VOCAL IMITATIONS OF SONGBIRDS",
+    "year": 2001,
+    "authors": [
+     "Jasmin Cirillo"
+    ],
+    "n_authors": 1,
+    "venue": "Cybernetics & Systems"
+   },
+   {
+    "citation_id": 5,
+    "id": "W2413528993",
+    "title": "Mechanisms underlying the social enhancement of vocal learning in songbirds",
+    "year": 2016,
+    "authors": [
+     "Yining Chen",
+     "Laura E. Matheson",
+     "Jon T. Sakata"
+    ],
+    "n_authors": 3,
+    "venue": "Proceedings of the National Academy of Sciences"
+   },
+   {
+    "citation_id": 6,
+    "id": "W2151322588",
+    "title": "Diurnal oscillation of vocal development associated with clustered singing by juvenile songbirds",
+    "year": 2015,
+    "authors": [
+     "Eri Ohgushi",
+     "Chihiro Mori",
+     "Kazuhiro Wada"
+    ],
+    "n_authors": 3,
+    "venue": "Journal of Experimental Biology"
+   },
+   {
+    "citation_id": 7,
+    "id": "W2896405626",
+    "title": "Acoustic adaptation to city noise through vocal learning by a songbird",
+    "year": 2018,
+    "authors": [
+     "Dana L. Moseley",
+     "Graham E. Derryberry",
+     "Jennifer N. Phillips"
+    ],
+    "n_authors": 7,
+    "venue": "Proceedings of the Royal Society B Biological Sciences"
+   },
+   {
+    "citation_id": 9,
+    "id": "W197181036",
+    "title": "Effects of learning on the motor gestures of birdsong",
+    "year": 2009,
+    "authors": [
+     "Franz Goller"
+    ],
+    "n_authors": 1,
+    "venue": "Frontiers in Systems Neuroscience"
+   },
+   {
+    "citation_id": 10,
+    "id": "W2123386632",
+    "title": "Memory in the making: localized brain activation related to song learning in young songbirds",
+    "year": 2010,
+    "authors": [
+     "Sharon M. H. Gobes",
+     "Matthijs A. Zandbergen",
+     "Johan J. Bolhuis"
+    ],
+    "n_authors": 3,
+    "venue": "Proceedings of the Royal Society B Biological Sciences"
+   }
+  ],
+  "n_retrieved": 10
+ },
+ {
+  "question": "What is the role of infrasound in elephant communication?",
+  "answer_markdown": "Elephants use **low-frequency rumbles**, including infrasonic components below the range of human hearing, mainly for **long-distance communication**. This helps them find mates and keep separated family groups together [2].\n\n### Why infrasound?\n- Low-frequency sound attenuates less than higher frequencies and is well suited to long-range propagation [4][2]. In the review literature, most long-distance elephant communication is attributed to infrasonic calls together with chemical signals, while close-range interactions also use visual and tactile signals [2].\n- **Weather shapes the range.** In Etosha National Park, temperature inversions after sunset can more than double the communication range, to over 10 km on clear, cold, calm nights, with peak conditions 1–2 h after sunset [5][6].\n\n### Rumble characteristics\nAt a zoo in Germany, over 1,350 rumbles were recorded in one month: 1–8 s long, with fundamentals of 10–25 Hz plus harmonics. Many came in rapid sequences, suggesting exchanges between animals [1].\n\n### A seismic channel?\nRumbles also produce **seismic (Rayleigh) waves** in the ground, with a modelled range of about 2 km under ideal conditions [8]. The same study concluded that seismic detection is unlikely to exceed airborne range in normal conditions. It may still help when airborne sound is limited, or as part of multimodal signalling [8]. Combining seismic and infrasound sensors can capture rumbles and movement signals that acoustic sensors alone miss [1].\n\n### Open questions\nThe function of many specific call types remains to be confirmed. Recording known individuals and running playback experiments is identified as the next step [2].",
+  "confidence": "medium",
+  "limitations": "Several retrieved records are about infrasound in other contexts (seabird navigation, urban noise) and are not cited. Evidence on function comes mainly from a review and propagation models, not playback experiments.",
+  "references": [
+   {
+    "citation_id": 1,
+    "id": "W7134231690",
+    "title": "Monitoring Zoo Elephant Rumble Activity Using Combined Seismic and Acoustic Data",
+    "year": 2026,
+    "authors": [
+     "Fabian Limberger",
+     "Georg Rümpker",
+     "Ronja Wesemann"
+    ],
+    "n_authors": 6,
+    "venue": "Ecology and Evolution"
+   },
+   {
+    "citation_id": 2,
+    "id": "W4244096879",
+    "title": "Elephant communication",
+    "year": 2000,
+    "authors": [
+     "William R. Langbauer"
+    ],
+    "n_authors": 1,
+    "venue": "Zoo Biology"
+   },
+   {
+    "citation_id": 4,
+    "id": "W2046586801",
+    "title": "Auditory communication, meteorology and the Umwelt.",
+    "year": 2002,
+    "authors": [
+     "David Larom"
+    ],
+    "n_authors": 1,
+    "venue": "Journal of comparative psychology"
+   },
+   {
+    "citation_id": 5,
+    "id": "W2004262641",
+    "title": "Abiotic controls on elephant communication",
+    "year": 1994,
+    "authors": [
+     "David Larom",
+     "Michael Garstang",
+     "Richard Raspet"
+    ],
+    "n_authors": 4,
+    "venue": "The Journal of the Acoustical Society of America"
+   },
+   {
+    "citation_id": 6,
+    "id": "W1908800688",
+    "title": "Atmospheric Controls On Elephant Communication",
+    "year": 1995,
+    "authors": [
+     "Michael Garstang",
+     "David Larom",
+     "Richard Raspet"
+    ],
+    "n_authors": 4,
+    "venue": "Journal of Experimental Biology"
+   },
+   {
+    "citation_id": 8,
+    "id": "W2043665623",
+    "title": "Seismic waves from elephant vocalizations: A possible communication mode?",
+    "year": 2004,
+    "authors": [
+     "Roland H. Günther",
+     "Caitlin E. O'Connell‐Rodwell",
+     "S. L. Klemperer"
+    ],
+    "n_authors": 3,
+    "venue": "Geophysical Research Letters"
+   }
+  ],
+  "n_retrieved": 10
+ },
+ {
+  "question": "Which species show evidence of syntax in their calls?",
+  "answer_markdown": "Within this sample, the strongest evidence for **compositional syntax** (combining meaningful calls so that both the parts and their order determine the meaning) comes from songbirds, with growing evidence in primates.\n\n### Birds\n- **Japanese tit (*Parus minor*)**: the clearest case. Receivers treat 'ABC' calls as *scan for danger* and 'D' calls as *approach*, and respond to 'ABC-D' with both behaviours. Reversing the order to 'D-ABC' mostly eliminates the response [1]. This is described as the first experimental evidence of compositional syntax in a wild animal [1][2].\n- **Great tit (*Parus major*)**: also extracts different meanings from component mobbing calls and their combination [6]. Sensitivity to reversed order varies by season, which may explain the partly contrasting results between the two tit species [9].\n- **Southern pied babbler**: combines alert and recruitment calls into mobbing sequences that have been proposed as compositional [6].\n- **Chestnut-crowned babbler**: maternal contact calls combine a core 'piping' element with other elements ('peow-pipe', 'beg-pipe'), and playbacks show the combined forms elicit different responses [3].\n- **Tits and chickadees as a family**: the ordered FD call combination occurs in nearly all Parid species and probably arose 11–26 million years ago [4].\n\n### Primates\n- **Chimpanzees**: combine 'alarm-huus' and 'waa-barks' when they encounter snakes. In playbacks, the combination drew stronger responses than either call alone, suggesting a compositional, syntax-like structure [8].\n- **Common marmosets**: Markov-chain analyses show call sequences beyond two-call pairs, up to eight or nine calls, with hints of internal organization [7].\n\n### Other mammals\n- **Banded mongoose**: single calls have a segmental structure: the first part signals caller identity and the second the current activity, a form of 'phonological' combination rather than syntax between meaningful calls [10].\n\nWhether these cases are comparable to human syntax is still debated. Some authors argue there is a layer of simpler, non-hierarchical syntax in language that animal call combinations can usefully be compared with [5][2].",
+  "confidence": "high",
+  "limitations": "Limited to species present in the demo sample; other reported cases (for example in other primates or cetaceans) may be missing. Most examples involve two-call combinations.",
+  "references": [
+   {
+    "citation_id": 1,
+    "id": "W2295532861",
+    "title": "Experimental evidence for compositional syntax in bird calls",
+    "year": 2016,
+    "authors": [
+     "Toshitaka N. Suzuki",
+     "David J. Wheatcroft",
+     "Michael Griesser"
+    ],
+    "n_authors": 3,
+    "venue": "Nature Communications"
+   },
+   {
+    "citation_id": 2,
+    "id": "W2886051835",
+    "title": "Call combinations in birds and the evolution of compositional syntax",
+    "year": 2018,
+    "authors": [
+     "Toshitaka N. Suzuki",
+     "David J. Wheatcroft",
+     "Michael Griesser"
+    ],
+    "n_authors": 3,
+    "venue": "PLoS Biology"
+   },
+   {
+    "citation_id": 3,
+    "id": "W4308470200",
+    "title": "Syntax-like Structures in Maternal Contact Calls of Chestnut-Crowned Babblers (Pomatostomus ruficeps)",
+    "year": 2022,
+    "authors": [
+     "Silvan Spiess",
+     "Helen K. Mylne",
+     "Sabrina Engesser"
+    ],
+    "n_authors": 7,
+    "venue": "International Journal of Primatology"
+   },
+   {
+    "citation_id": 4,
+    "id": "W4411869296",
+    "title": "Birds combined calls more than 11 million years ago",
+    "year": 2025,
+    "authors": [
+     "Ambre Salis",
+     "Robin Ryder",
+     "Axel Molina"
+    ],
+    "n_authors": 5,
+    "venue": "Scientific Reports"
+   },
+   {
+    "citation_id": 5,
+    "id": "W2887025330",
+    "title": "Compositionality in animals and humans",
+    "year": 2018,
+    "authors": [
+     "Simon William Townsend",
+     "Sabrina Engesser",
+     "Sabine Stoll"
+    ],
+    "n_authors": 5,
+    "venue": "PLoS Biology"
+   },
+   {
+    "citation_id": 6,
+    "id": "W2955259061",
+    "title": "Syntax manipulation changes perception of mobbing call sequences across passerine species",
+    "year": 2019,
+    "authors": [
+     "Mylène Dutour",
+     "Thierry Lengagne",
+     "Jean‐Paul Léna"
+    ],
+    "n_authors": 3,
+    "venue": "Ethology"
+   },
+   {
+    "citation_id": 7,
+    "id": "W4404063660",
+    "title": "Beyond bigrams: call sequencing in the common marmoset ( Callithrix jacchus ) vocal system",
+    "year": 2024,
+    "authors": [
+     "Alexandra B. Bosshard",
+     "Judith Maria Burkart",
+     "Paola Merlo"
+    ],
+    "n_authors": 6,
+    "venue": "Royal Society Open Science"
+   },
+   {
+    "citation_id": 8,
+    "id": "W4372336866",
+    "title": "Call combinations and compositional processing in wild chimpanzees",
+    "year": 2023,
+    "authors": [
+     "Maël Leroux",
+     "Anne Marijke Schel",
+     "Claudia Wilke"
+    ],
+    "n_authors": 7,
+    "venue": "Nature Communications"
+   },
+   {
+    "citation_id": 9,
+    "id": "W3126837766",
+    "title": "Biological conclusions about importance of order in mobbing calls vary with the reproductive context in Great Tits (Parus major)",
+    "year": 2021,
+    "authors": [
+     "Ambre Salis",
+     "Thierry Lengagne",
+     "Jean‐Paul Léna"
+    ],
+    "n_authors": 4,
+    "venue": "Ibis"
+   },
+   {
+    "citation_id": 10,
+    "id": "W2153069826",
+    "title": "Segmental structure in banded mongoose calls",
+    "year": 2012,
+    "authors": [
+     "W. Tecumseh Fitch"
+    ],
+    "n_authors": 1,
+    "venue": "BMC Biology"
+   }
+  ],
+  "n_retrieved": 10
+ }
+]

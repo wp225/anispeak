@@ -1,0 +1,18 @@
+{# Cookie consent banner. Only shown when enabled and user hasn't chosen. #}
+{% if cookie_consent_enabled and request.cookies.get('asa_consent') not in ['accept', 'reject'] %}
+  <div class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie consent">
+    <div class="cookie-banner-inner">
+      <div class="cookie-banner-text">
+        <div class="cookie-banner-title">Cookie choice</div>
+        <div class="cookie-banner-body">
+          Accept to keep you signed in for {{ cookie_session_days }} days.
+          Reject and you will need to sign in again when you restart your browser.
+        </div>
+      </div>
+      <div class="cookie-banner-actions">
+        <a class="btn sm" href="{{ url_for('auth.consent_set', choice='reject') }}">Reject</a>
+        <a class="btn sm primary" href="{{ url_for('auth.consent_set', choice='accept') }}">Accept</a>
+      </div>
+    </div>
+  </div>
+{% endif %}

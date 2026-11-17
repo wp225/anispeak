@@ -1,0 +1,89 @@
+<!doctype html>
+<html data-script-root="{{ request.script_root|e }}">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light" />
+    <title>
+      {% block title %}AniSpeakArchive{% endblock %}
+    </title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/icon.png') }}" />
+    <link rel="apple-touch-icon" href="{{ url_for('static', filename='img/icon.png') }}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/auth.css') }}" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" />
+  </head>
+  <body>
+    {% include "base/navbar.html" %}
+    <div id="toastHost" class="toast-host" aria-live="polite" aria-atomic="true"></div>
+    <script>
+      window.__ASA_SCRIPT_ROOT = {{ request.script_root|tojson }};
+    </script>
+    <main class="container" id="app">
+      {% block content %}{% endblock %}
+    </main>
+
+    {% include "base/cookie_consent.html" %}
+
+    <script>
+      // Server-side flash messages (e.g., OTP/login outcomes)
+      window.__ASA_FLASHES = {{ get_flashed_messages(with_categories=true) | tojson }};
+    </script>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-left">
+          <div class="footer-title">Arlington Computational Linguistics Lab (ACL2)</div>
+        </div>
+        <div class="footer-right">
+          <a class="footer-link" href="https://redgiant.uta.edu/index.html" target="_blank" rel="noopener noreferrer">Group website</a>
+          <span class="footer-sep">·</span>
+          <a class="footer-link" href="mailto:uta.acl2@gmail.com">Contact: uta.acl2@gmail.com</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    {# Prefer local vendor bundle (works offline). If missing, the UI falls back gracefully. #}
+    <script src="{{ url_for('static', filename='vendor/citation.min.js') }}"></script>
+    <script>
+      // citation-js browser bundle defines `require('citation-js')` but may not attach `window.Cite`.
+      // Normalize to a global so our UI can use it.
+      try {
+        if (!window.Cite && typeof require === 'function') {
+          window.Cite = require('citation-js');
+        }
+      } catch (e) {
+        console.warn('[Citation Debug] Failed to initialize citation-js global:', e);
+      }
+    </script>
+    <script>
+      // citation-js browser build exposes CommonJS `require`; normalize to `window.Cite`.
+      try {
+        if (!window.Cite && typeof window.require === 'function') {
+          window.Cite = window.require('citation-js');
+        }
+      } catch (e) {
+        console.warn('[Citation Debug] Failed to initialize window.Cite:', e);
+      }
+    </script>
+    <script>
+      // Some citation-js browser bundles expose a CommonJS-ish loader instead of window.Cite.
+      // If so, attach the global here.
+      try {
+        if (!window.Cite && typeof window.require === 'function') {
+          window.Cite = window.require('citation-js');
+        }
+      } catch (e) {
+        console.warn('[citation-js] failed to init global Cite:', e);
+      }
+    </script>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    {% block scripts %}{% endblock %}
+  </body>
+</html>

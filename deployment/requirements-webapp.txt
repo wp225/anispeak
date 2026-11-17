@@ -1,0 +1,26 @@
+# Web app only — excludes vllm and pipeline-only deps.
+# torch is provided by the base image (pytorch/pytorch:...-cuda12.8).
+# All versions pinned to match verified working local environment (pip freeze).
+
+flask==3.0.3
+pydantic==2.13.3
+pyyaml==6.0.2
+gunicorn==23.0.0
+
+numpy==2.2.6
+pandas==2.2.2
+pyarrow==16.1.0
+tqdm==4.66.5
+
+lancedb==0.29.2
+lance-namespace==0.6.1
+lance-namespace-urllib3-client==0.6.1
+
+transformers==4.57.6
+FlagEmbedding==1.3.5
+sentence-transformers==5.2.3
+scikit-learn==1.7.2
+rapidfuzz==3.14.3
+inflect==7.5.0
+requests==2.33.1
+markdown-it-py==4.0.0

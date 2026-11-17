@@ -1,0 +1,8 @@
+{
+  "n_papers": 476,
+  "dim": 384,
+  "browser_model": "Xenova/bge-small-en-v1.5",
+  "query_prefix": "Represent this sentence for searching relevant passages: ",
+  "built": "2026-11-17",
+  "source": "OpenAlex API (CC0)"
+}

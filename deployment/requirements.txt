@@ -1,0 +1,28 @@
+# Core app
+flask==3.0.3
+pydantic>=2.12.0
+pyyaml==6.0.2
+
+# Data
+numpy==1.26.4
+pandas==2.2.2
+pyarrow>=16.1.0
+tqdm==4.66.5
+
+# Vector DB
+lancedb==0.29.2
+
+# ML / Embeddings / LLM
+transformers==4.57.6        # MUST stay <5 for vllm
+vllm==0.16.0                # requires transformers >=4.56,<5
+mistral-common==1.9.0           # 1.10+ have broken circular dep in [image] extra
+FlagEmbedding==1.3.5        # works with 4.57.6
+datasets>=2.19.0,<4.0.0     # 4.x requires pyarrow>=21 which breaks lancedb
+scikit-learn==1.7.2
+rapidfuzz==3.14.3
+inflect==7.5.0
+torch==2.9.1
+sentence-transformers>=5.0.0,<5.3.0
+
+# Networking (species pipeline)
+requests>=2.31.0

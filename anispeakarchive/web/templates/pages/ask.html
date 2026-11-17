@@ -1,0 +1,65 @@
+{% extends "base/layout.html" %}
+{% block title %}Ask AI — AniSpeakArchive{% endblock %}
+
+{% block content %}
+<div class="ask-layout">
+
+  <!-- ── Sidebar: conversation history ── -->
+  <aside class="ask-sidebar" id="askSidebar">
+    <div class="ask-sidebar-top">
+      <button class="btn primary ask-new-btn" id="btnNewChat">+ New conversation</button>
+      <button class="btn sm ask-clear-btn" id="btnClearHistory" title="Delete all conversations">Clear all</button>
+    </div>
+    <div class="ask-history-list" id="askHistoryList">
+      <!-- Populated by ask.js -->
+    </div>
+  </aside>
+
+  <!-- ── Main chat area ── -->
+  <div class="ask-main">
+
+    <!-- Messages -->
+    <div class="ask-messages" id="askMessages">
+      <div class="ask-empty" id="askEmpty">
+        <div class="ask-empty-icon">🦜</div>
+        <h2 class="ask-empty-title">Ask about animal communication</h2>
+        <p class="ask-empty-sub">Ask any question about animal communication, bioacoustics, or related research. The AI will answer based on the literature.</p>
+        <div class="ask-starters">
+          <button class="ask-starter-btn">What vocalizations do humpback whales use to communicate?</button>
+          <button class="ask-starter-btn">How do birds learn songs from their parents?</button>
+          <button class="ask-starter-btn">What is the role of infrasound in elephant communication?</button>
+          <button class="ask-starter-btn">Which species show evidence of syntax in their calls?</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Input bar -->
+    <div class="ask-input-bar">
+      <div class="ask-input-wrap">
+        <button class="ask-sidebar-toggle btn sm" id="btnToggleSidebar" title="Toggle history">☰</button>
+        <textarea
+          id="askInput"
+          class="ask-input"
+          placeholder="Ask about animal communication research…"
+          rows="1"
+          maxlength="2000"
+        ></textarea>
+        <div id="askCharCount" class="muted" style="font-size:0.8rem; min-width:64px; text-align:right;">0/2000</div>
+        <button class="ask-send-btn" id="askSend" disabled title="Send">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+          </svg>
+        </button>
+      </div>
+      <p class="ask-disclaimer">AI answers may be inaccurate — always verify with primary sources.</p>
+    </div>
+
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/ask.css') }}" />
+<script src="{{ url_for('static', filename='js/ask.js') }}"></script>
+{% endblock %}

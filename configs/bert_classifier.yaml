@@ -1,0 +1,60 @@
+paths:
+  pipeline_dir: data/processed
+  fetch_jsonl: data/processed/fetched_papers.jsonl
+  dataset_dir: data/dataset
+  runs_dir: data/models
+  run_name: bert
+model:
+  name: allenai/scibert_scivocab_uncased
+  max_len: 512
+  dropout: 0.1
+input_fields:
+  use_title: true
+  use_abstract: true
+  use_venue: true
+  use_topics: false
+  use_keywords: true
+  use_concepts: false
+  use_mesh_terms: false
+  use_primary_topic_field: true
+  use_authors: false
+  use_institutions: false
+  max_topics: 5
+  max_keywords: 8
+  max_concepts: 5
+  max_mesh: 5
+dataset:
+  num_workers: 16
+  min_score: 7                    # positives: score>=7 only (clean)
+  include_soft_positives: false   # score=5 excluded entirely
+  soft_min_score: 5               # inactive — kept for reference only
+  hard_neg_max_score: 3           # neg-D: score<=3 from final_relevant (NOT 5)
+  neg_ratio: 1.0                  # 1:1 pos:neg — equal and balanced
+  max_neg: 100000
+  val_ratio: 0.1
+  test_ratio: 0.1
+  seed: 42
+  min_text_len: 30
+
+training:
+  batch_size: 32
+  epochs: 10
+  lr: 2.0e-05
+  warmup_ratio: 0.06
+  weight_decay: 0.01
+  gradient_clip: 1.0
+  accumulate_grad_batches: 2
+  num_workers: 4
+  precision: bf16
+  val_check_interval: 1.0
+  log_every_n_steps: 50
+  early_stopping_patience: 5
+  save_top_k: 3
+  resume: false
+loss:
+  focal_gamma_neg: 1.0
+  focal_gamma_pos: 0.0
+  pos_weight: 1.0
+  label_smoothing: 0.05
+inference:
+  threshold: 0.4
